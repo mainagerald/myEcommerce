@@ -26,6 +26,6 @@ public class AdminServiceConfig implements UserDetailsService {
                 admin.getPassword(),
                 admin.getRoles()
                 .stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList()));
+                .map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList()));
     }
 }

@@ -1,11 +1,11 @@
 package com.ecommerce.library.model;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.List;
 

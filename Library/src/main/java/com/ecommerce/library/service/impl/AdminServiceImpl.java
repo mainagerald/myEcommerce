@@ -8,7 +8,9 @@ import com.ecommerce.library.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.management.relation.Role;
 import java.util.Arrays;
+import java.util.Collection;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -30,7 +32,8 @@ public class AdminServiceImpl implements AdminService {
         admin.setLastName(adminDto.getLastName());
         admin.setUsername(adminDto.getUsername());
         admin.setPassword(adminDto.getPassword());
-        admin.setRoles(Arrays.asList(roleRepository.findByName("ADMIN")));
+        com.ecommerce.library.model.Role adminRole = roleRepository.findByName("ADMIN");
+        admin.setRoles((Collection<Role>) adminRole);
         return adminRepository.save(admin);
     }
 }
